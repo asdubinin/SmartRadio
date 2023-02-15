@@ -60,4 +60,15 @@ public class RadioTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
+    @ParameterizedTest
+    @CsvFileSource(files="src/test/resources/numStation")
+    public void shouldSetNumberOfRadio(int i, int expected) {
+        Radio radio = new Radio(i);
+        int actual = radio.getMaxStation();
+
+        Assertions.assertEquals(expected, actual);
+    }
+
 }
+
